@@ -1,10 +1,13 @@
 {
   "package": "Pastebin",
   "tagline": "Pastebin API",
-  "description": "",
-  "image": "",
-  "repo": "",
-  "keywords": [],
+  "description": "Past and share short source code snippets for code review",
+  "image": "https://logo.clearbit.com/pastebin.com?s=128",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Pastebin-Package",
+  "keywords": [
+    "code",
+    "review"
+  ],
   "accounts": {
     "domain": "pastebin.com",
     "credentials": [

@@ -6,7 +6,7 @@
 * Credentials: apiDevKey
 
 ## How to get credentials: 
-1.   
+1. Sing up and go [API page](https://pastebin.com/api). There will be Your Unique Developer API Key
 
 
 

@@ -1,0 +1,273 @@
+{
+  "package": "Pastebin",
+  "tagline": "Pastebin API",
+  "description": "",
+  "image": "",
+  "repo": "",
+  "keywords": [],
+  "accounts": {
+    "domain": "pastebin.com",
+    "credentials": [
+      "apiDevKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "createApiUserKey",
+      "description": "Creating An apiUserKey",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        },
+        {
+          "name": "userName",
+          "type": "String",
+          "info": "This is the username of the user you want to login",
+          "required": true
+        },
+        {
+          "name": "userPass",
+          "type": "String",
+          "info": "This is the password of the user you want to login",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createPaste",
+      "description": "Creating A New Paste",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "This is the text that will be written inside your paste",
+          "required": true
+        },
+        {
+          "name": "apiUserKey",
+          "type": "String",
+          "info": "Use apiUserKey from createApiUserKey endpoint to own this paste. If not set, paste will be own by Guest",
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "This will be the name / title of your paste",
+          "required": false
+        },
+        {
+          "name": "format",
+          "type": "String",
+          "info": "This will be the syntax highlighting value",
+          "required": false
+        },
+        {
+          "name": "private",
+          "type": "Select",
+          "options": ["0", "1", "2"],
+          "info": "This makes a paste public or private, public = 0, unlisted = 1, private = 2",
+          "required": false
+        },
+        {
+          "name": "expireDate",
+          "type": "Select",
+          "options": ["N", "10M", "1H", "1D", "1W", "2W", "1M"],
+          "info": "This sets the expiration date of your paste. There are 7 valid values available which you can use: N = Never, 10M = 10 Minutes, 1H = 1 Hour, 1D = 1 Day, 1W = 1 Week, 2W = 2 Weeks, 1M = 1 Month",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUserPastes",
+      "description": "Listing Pastes Created By A User",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        },
+        {
+          "name": "apiUserKey",
+          "type": "String",
+          "info": "To get apiUserKey use createApiUserKey endpoint",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "By default its set to 50, min value is 1, max value is 1000",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTrendingPastes",
+      "description": "Listing Trending Pastes",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteUserPaste",
+      "description": "Deleting A Paste Created By A User",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUser",
+      "description": "Getting A Users Information And Settings",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        },
+        {
+          "name": "apiUserKey",
+          "type": "String",
+          "info": "To get apiUserKey use createApiUserKey endpoint",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUserPastesRaw",
+      "description": "Getting raw paste output of users pastes including 'private' pastes",
+      "args": [
+        {
+          "name": "apiDevKey",
+          "type": "credentials",
+          "info": "This is your API Developer Key",
+          "required": true
+        },
+        {
+          "name": "apiUserKey",
+          "type": "String",
+          "info": "To get apiUserKey use createApiUserKey endpoint",
+          "required": true
+        },
+        {
+          "name": "pasteKey",
+          "type": "String",
+          "info": "Paste key",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSinglePasteRaw",
+      "description": "Getting raw paste output of any 'public' & 'unlisted' pastes",
+      "args": [
+        {
+          "name": "pasteKey",
+          "type": "String",
+          "info": "Paste key",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
+

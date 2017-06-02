@@ -61,9 +61,11 @@ Listing Trending Pastes
 ## Pastebin.deleteUserPaste
 Deleting A Paste Created By A User
 
-| Field    | Type       | Description
-|----------|------------|----------
-| apiDevKey| credentials| This is your API Developer Key
+| Field     | Type       | Description
+|-----------|------------|----------
+| apiDevKey | credentials| This is your API Developer Key
+| apiUserKey| String     | Use apiUserKey from createApiUserKey endpoint
+| pasteKey  | String     | Paste key
 
 ## Pastebin.getUser
 Getting A Users Information And Settings
